@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bootstrap Product List Carousel for Ecommerce Website</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+body {
+	font-family: "Open Sans", sans-serif;
+}
+
+.carousel {
+	margin: 50px auto;
+	padding: 0 70px;
+}
+.carousel .item {
+	min-height: 330px;
+    text-align: center;
+	overflow: hidden;
+}
+.carousel .item .img-box {
+	height: 160px;
+	width: 100%;
+	position: relative;
+}
+.carousel .item img {	
+	max-width: 100%;
+	max-height: 100%;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+.carousel .item h4 {
+	font-size: 18px;
+	margin: 10px 0;
+}
+.carousel .item .btn {
+	color: #333;
+    border-radius: 0;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    margin-top: 5px;
+    line-height: 16px;
+}
+.carousel .item .btn:hover, .carousel .item .btn:focus {
+	color: #fff;
+	background: #000;
+	border-color: #000;
+	box-shadow: none;
+}
+.carousel .item .btn i {
+	font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+.carousel .thumb-wrapper {
+	text-align: center;
+}
+.carousel .thumb-content {
+	padding: 15px;
+}
+.carousel .carousel-control {
+	height: 100px;
+    width: 40px;
+    background: none;
+    margin: auto 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+.carousel .carousel-control i {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    display: inline-block;
+    margin: -16px 0 0 0;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    color: rgba(0, 0, 0, 0.8);
+    text-shadow: none;
+    font-weight: bold;
+}
+.carousel .item-price {
+	font-size: 13px;
+	padding: 2px 0;
+}
+.carousel .item-price strike {
+	color: #999;
+	margin-right: 5px;
+}
+.carousel .item-price span {
+	color: #86bd57;
+	font-size: 110%;
+}
+.carousel .carousel-control.left i {
+	margin-left: -3px;
+}
+.carousel .carousel-control.left i {
+	margin-right: -3px;
+}
+.carousel .carousel-indicators {
+	bottom: -50px;
+}
+.carousel-indicators li, .carousel-indicators li.active {
+	width: 10px;
+	height: 10px;
+	margin: 4px;
+	border-radius: 50%;
+	border-color: transparent;
+}
+.carousel-indicators li {	
+	background: rgba(0, 0, 0, 0.2);
+}
+.carousel-indicators li.active {	
+	background: rgba(0, 0, 0, 0.6);
+}
+.star-rating li {
+	padding: 0;
+}
+.star-rating i {
+	font-size: 14px;
+	color: #ffc000;
+}
+.row{
+    margin: 0px;
+}
+.container{
+    margin: 0px;
+    padding: 0px;
+}
+#myCarousel{
+    margin: 0px;
+    padding: 0px;
+}
+.col-sm-3{
+   
+}
+.current-price{
+    padding: 0px;
+    margin: 0px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-right: 7px;
+    color: #690;
+    margin-bottom: 10px;
+
+}
+.old-price{
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    margin-right: 7px;
+    margin-top: 2px;
+    color: #f14705;
+    margin-bottom: 10px;
+}
+
+
+.offer-ammount{
+    padding: 0px;
+    margin: 0px;
+    font-size: 14px;
+    font-weight: 300;
+    margin-right: 7px;
+    margin-bottom: 10px;
+    
+  
+
+}
+.product-name{
+    padding: 0px;
+    margin: 0px;
+    text-align: initial;
+    font-size: 14px;
+    margin-top: 10px;
+    color: #06c;
+    font-weight: 400;
+        
+    }
+    .manufacturer{
+        padding: 0px;
+   
+    text-align: left;
+    font-size: 14px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    }
+    .list-inline {
+    padding-left: 0;
+     margin: 0px;
+    list-style: none;
+    
+}
+.progress-bar {
+    float: left;
+    width: 4px;
+    height: 23px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+    text-align: center;
+    background-color: #ffaa02;
+    -webkit-box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,.15);
+    -webkit-transition: width .6s ease;
+    -o-transition: width .6s ease;
+    transition: width .6s ease;
+    
+}
+.progress {
+    margin-top: 10px;
+    height: 14px;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    margin-bottom: 0px;
+    -webkit-box-shadow: 0px;
+    box-shadow: initial;
+
+}
+a{
+    cursor: pointer;
+}
+.col-sm-3:hover{
+    border: 1px solid rgba(0, 0, 0, 0.137);
+    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			
+			<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="0" ">
+			<!-- Carousel indicators -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>   
+			<!-- Wrapper for carousel items -->
+			<div class="carousel-inner">
+				<div class="item carousel-item active">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box" >
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content"  >
+                                    <div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                    </div>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+                                    <div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                        
+
+                                    </div>
+                                </div>						
+							</div>
+						</div>		
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 45%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>								
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 22%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="item carousel-item">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+                                    <div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 55%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>						
+					</div>
+				</div>
+				<div class="item carousel-item">
+					<div class="row">
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 20%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 80%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>	
+						<div class="col-sm-3">
+							<div class="thumb-wrapper">
+								<div class="img-box">
+									<img src="http://demo2.drfuri.com/martfury18/wp-content/uploads/sites/59/2013/06/12a-1-300x300.jpg" class="img-responsive img-fluid" alt="">
+								</div>
+								<div class="thumb-content">
+									<div class="pricing-contaainer">
+                                        <div class="prices" style=" width: 100%;  display: flex; flex-wrap: wrap;">
+
+                                            <h1 class="current-price" >$9.50</h1>
+                                            <h2 class="old-price" style="text-decoration: line-through;">$2,99.50</h2>
+                                            <h3 class="offer-ammount">16% off again</h3>
+                                        </div>
+                                        <h1 class="product-name" >DJI Phantom 4 Quadcopter Camera, White</h1>
+                                        <p class="manufacturer">sold by <a>Go Pro</a></p>
+                                        <div class="rating-container" style="display: flex;">
+                                            <div class="star-rating">
+                                                <ul class="list-inline">
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                    <li class="list-inline-item"><i class="fa fa-star-half-o"></i></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                          </div>
+                                        
+
+                                    </div>
+								</div>						
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>                                		                            
