@@ -13,3 +13,11 @@
 <p align="center">
   <img width="1000" src="https://i.ibb.co/syhNXFM/Screenshot-2.png">
 </p>
+
+## :file_folder:products with carousel
+
+<p align="center">
+  <img width="1000" src="https://i.ibb.co/JytCWh0/Screenshot-from-2020-02-04-04-09-42.png">
+</p>
+
+
