@@ -20,4 +20,9 @@
   <img width="1000" src="https://i.ibb.co/JytCWh0/Screenshot-from-2020-02-04-04-09-42.png">
 </p>
 
+## :file_folder:products carousel
+
+<p align="center">
+  <img width="1000" src="https://i.ibb.co/wB5y8Bw/Screenshot-5.png">
+</p>
 
